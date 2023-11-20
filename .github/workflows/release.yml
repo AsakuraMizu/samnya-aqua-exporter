@@ -51,7 +51,7 @@ jobs:
         with:
           path: src-tauri/src/aimedb/key.rs
           contents: |
-            pub const KEY: &[u8; 0x10] = b\"${{ secrets.AIMEDB_KEY }}\";
+            pub const KEY: &[u8; 0x10] = b"${{ secrets.AIMEDB_KEY }}";
           write-mode: overwrite
 
       - name: Build the app
