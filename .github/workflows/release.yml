@@ -47,8 +47,12 @@ jobs:
         # If you don't have `beforeBuildCommand` configured you may want to build your frontend here too.
         run: yarn install # Change this to npm, yarn or pnpm.
 
-      - name: Setup key
-        run: 'echo "pub const KEY: &[u8; 0x10] = b\"${{ secrets.AIMEDB_KEY }}\";" > src-tauri/src/aimedb/key.rs'
+      - uses: DamianReeves/write-file-action@master
+        with:
+          path: src-tauri/src/aimedb/key.rs
+          contents: |
+            pub const KEY: &[u8; 0x10] = b\"${{ secrets.AIMEDB_KEY }}\";
+          write-mode: overwrite
 
       - name: Build the app
         uses: tauri-apps/tauri-action@v0
