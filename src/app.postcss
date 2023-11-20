@@ -1,0 +1,14 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: Zpix;
+  src: url('zpix.ttf') format('truetype');
+}
+
+:root [data-theme='wintry'] {
+  --theme-font-family-base: 'Zpix', sans-serif;
+  --theme-font-family-heading: 'Zpix', sans-serif;
+}
